@@ -1,0 +1,67 @@
+﻿@import "../../_globalColor";
+
+.game-video-card {
+  width: 360px;
+  background: $lightBackground1;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px $lightBoxShadow;
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s;
+}
+
+.game-video-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $titleColor;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.game-video-description {
+  font-size: 1rem;
+  color: $textColor;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.game-video-iframe {
+  width: 100%;
+  max-width: 360px;
+  height: 202px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #000;
+}
+
+.game-video-thumbnail {
+  width: 100%;
+  max-width: 360px;
+  height: 202px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: #ddd;
+}
+
+@media (max-width: 600px) {
+  .game-video-card {
+    padding: 14px 6px;
+    max-width: 100%;
+  }
+  .game-video-iframe,
+  .game-video-thumbnail {
+    max-width: 100%;
+    height: 180px;
+  }
+  .game-video-title {
+    font-size: 1.1rem;
+  }
+  .game-video-description {
+    font-size: 0.95rem;
+  }
+}
