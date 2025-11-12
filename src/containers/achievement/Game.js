@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
-import "./Achievement.scss";
+import "./Game.scss";
 import GameVideoCard from "../../components/gameVideoCard/GameVideoCard";
-import { achievementSection } from "../../portfolio";
+import { gamesSection } from "../../portfolio";
 import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
-export default function Achievement() {
+export default function Game() {
   const { isDark } = useContext(StyleContext);
-  if (!achievementSection.display) {
+  if (!gamesSection.display) {
     return null;
   }
   return (
@@ -18,25 +18,25 @@ export default function Achievement() {
             <h1
               className={
                 isDark
-                  ? "dark-mode heading achievement-heading"
-                  : "heading achievement-heading"
+                  ? "dark-mode heading game-heading"
+                  : "heading game-heading"
               }
             >
-              {achievementSection.title}
+              {gamesSection.title}
             </h1>
             <p
               className={
                 isDark
-                  ? "dark-mode subTitle achievement-subtitle"
-                  : "subTitle achievement-subtitle"
+                  ? "dark-mode subTitle game-subtitle"
+                  : "subTitle game-subtitle"
               }
             >
-              {achievementSection.subtitle}
+              {gamesSection.subtitle}
             </p>
           </div>
           <div className="achievement-cards-div">
-            {achievementSection.gameVideos.map((video, i) => (
-              <GameVideoCard key={i} isDark={isDark} videoInfo={video} />
+            {gamesSection.gameVideos.map((video, i) => (
+              <GameVideoCard key={i} videoInfo={video} isDark={isDark} />
             ))}
           </div>
         </div>

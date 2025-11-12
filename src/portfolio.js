@@ -26,7 +26,7 @@ const greeting = {
     "A computer science student by day 💻, and an indie game developer by night 🎮 I aim to create experiences that make people smile."
   ),
   resumeLink:
-    "", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -35,9 +35,8 @@ const greeting = {
 const socialMediaLinks = {
   github: "https://github.com/Tiggle2002",
   gmail: "tal.scheffer13@gmail.com",
-  // Instagram, Twitter and Kaggle are also supported in the links!
-  // To customize icons and social links, tweak src/components/SocialMedia
-  display: true // Set true to display this section, defaults to false
+  discord: "tiggledev",
+  display: false // Set true to display this section, defaults to false
 };
 
 // Skills Section
@@ -96,56 +95,27 @@ https://fontawesome.com/icons?d=gallery */
       fontAwesomeClassname: "fab fa-git-alt"
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Education Section
 
-const educationInfo = {
-  display: true, // Set false to hide this section, defaults to true
-  schools: [
-    {
-      schoolName: "Harvard University",
-      logo: require("./assets/images/harvardLogo.png"),
-      subHeader: "Master of Science in Computer Science",
-      duration: "September 2017 - April 2019",
-      desc: "Participated in the research of XXX and published 3 papers.",
-      descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-      ]
-    },
-    {
-      schoolName: "Stanford University",
-      logo: require("./assets/images/stanfordLogo.png"),
-      subHeader: "Bachelor of Science in Computer Science",
-      duration: "September 2013 - April 2017",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
-    }
-  ]
-};
-
 // Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
-  experience: [
-    {
-      Stack: "Frontend/Design", //Insert stack or technology you have experience in
-      progressPercentage: "90%" //Insert relative proficiency in percentage
-    },
-    {
-      Stack: "Backend",
-      progressPercentage: "70%"
-    },
-    {
-      Stack: "Programming",
-      progressPercentage: "60%"
-    }
+  viewSkillBars: false, // hide the old bars
+  displayCodersrank: false, // hide codersrank
+  coreStrengths: [
+    "Worldbuilding and spatial storytelling",
+    "Level design and environmental composition",
+    "Creative coding in Unity (C#)",
+    "Iterative design through playtesting and feedback",
+    "Music and atmosphere design (FL Studio)",
+    "Pixel art and animation (Aseprite)"
   ],
-  displayCodersrank: false // Set true to display codersrank badges section need to changes your username in src/containers/skillProgress/skillProgress.js:17:62, defaults to false
+  display: true
 };
+
 
 // Work experience section
 
@@ -224,27 +194,52 @@ const bigProjects = {
 // Achievement Section
 // Include certificates, talks etc
 
-const achievementSection = {
+const gamesSection = {
   title: emoji("My Games 🎮"),
-  subtitle: "Watch trailers and gameplay footage of my games below!",
+  subtitle: "Watch trailers and gameplay footage of my games here!",
   gameVideos: [
     {
-      title: "My Awesome Game",
-      description: "Check out the trailer for My Awesome Game.",
+      title: "A Tale of Sand and Bone",
+      description: (
+        <>
+          Check out the trailer for My Awesome Game.{" "}
+          <a
+            href="https://store.steampowered.com/app/2918070/A_Tale_of_Sand_and_Bone/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Click here to view on Steam!
+          </a>
+        </>
+      ),
       videoUrl: "https://www.youtube.com/embed/GMYBbAnGA6g?si=chMvR-8EytiWrOLR",
-      thumbnail: require("./assets/images/tosab.jpg")
     },
     {
-      title: "My Awesome Game",
-      description: "Check out the trailer for My Awesome Game.",
-      videoUrl: "https://www.youtube.com/embed/GMYBbAnGA6g?si=chMvR-8EytiWrOLR",
-      thumbnail: require("./assets/images/tosab.jpg")
+      title: "Below",
+      description: (
+        <>
+          A boy wakes at the edge of the world, and climbs in search of a home.{" "}
+          <a
+            href="https://tiggledev.itch.io/below"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Click here to play on itch.io!
+          </a>
+        </>
+      ),
+      videoUrl: "https://www.youtube.com/embed/jKQ_rTimxIc?si=oy3SiNS68YAievd0",
     },
     {
-      title: "My Awesome Game",
-      description: "Check out the trailer for My Awesome Game.",
-      videoUrl: "https://www.youtube.com/embed/GMYBbAnGA6g?si=chMvR-8EytiWrOLR",
-      thumbnail: require("./assets/images/tosab.jpg")
+      title: "Duck Game",
+      description: "A mother duck must lead her ducklings to safety!",
+      videoUrl: "https://www.youtube.com/embed/75M_pLbMSxw?si=eACWGcpvV6bJ2MN3",
+    },
+    {
+      title: "Truffle Keeper",
+      description: "A 2D tower defense survival game",
+      videoUrl:
+        "https://www.youtube.com/embed/lzAvzk2hEeg?si=XUCM07wfk-x2l7zU",
     }
     // Add more as needed
   ],
@@ -255,43 +250,56 @@ const achievementSection = {
 
 const blogSection = {
   title: "Blogs",
-  subtitle:
-    "With Love for Developing cool stuff, I love to write and teach others what I have learnt.",
-  displayMediumBlogs: "true", // Set true to display fetched medium blogs instead of hardcoded ones
-  blogs: [
-    {
-      url: "https://blog.usejournal.com/create-a-google-assistant-action-and-win-a-google-t-shirt-and-cloud-credits-4a8d86d76eae",
-      title: "Win a Google Assistant Tshirt and $200 in Google Cloud Credits",
-      description:
-        "Do you want to win $200 and Google Assistant Tshirt by creating a Google Assistant Action in less then 30 min?"
-    },
-    {
-      url: "https://medium.com/@saadpasta/why-react-is-the-best-5a97563f423e",
-      title: "Why REACT is The Best?",
-      description:
-        "React is a JavaScript library for building User Interface. It is maintained by Facebook and a community of individual developers and companies."
-    }
-  ],
-  display: true // Set false to hide this section, defaults to true
+  subtitle: "...",
+  displayMediumBlogs: "true",
+  blogs: [],
+  display: false
 };
 
 // Talks Sections
 
 const talkSection = {
-  title: "TALKS",
-  subtitle: emoji(
-    "I LOVE TO SHARE MY LIMITED KNOWLEDGE AND GET A SPEAKER BADGE 😅"
-  ),
-
+  title: "Showcases",
+  subtitle: "Moments where I’ve shared my work and creative process.",
   talks: [
     {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/saadpasta-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
+        title: "Freshers’ Fair Showcase",
+        image: require("./assets/images/showcase_1.jpg"),
+        subtitle:
+          "Represented the Game Dev Society at Newcastle’s Freshers’ Fair, where students played my game and competed for the fastest completion time.",
+    },
+    {
+        title: "Welcome Week Showcase",
+        image: require("./assets/images/showcase_0.jpg"),
+        subtitle:
+          "Hosted a stall in the School of Computing during Welcome Week, where new Computer Science students played my game and learned about joining the Game Dev Society.",
+    },
+    {
+        title: "Newcastle University Inclusivity Game Jam 2025",
+        image: require("./assets/images/gamejam_1.png"),
+        subtitle:
+          "Worked with staff to help run the Inclusivity Game Jam, supporting students as they designed games exploring social themes.",
+    },
+    {
+        title: "Newcastle University Inclusivity Game Jam 2023",
+        image: require("./assets/images/gamejam_3.png"),
+        subtitle:
+          "Worked with two other students to design a satirical, narrative game exploring social theme in a forty-eight-hour game jam. The project was later exhibited at the School of Computing showcase.",
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
+};
+
+const educationInfo = {
+  display: true, // Set false to hide this section, defaults to true
+  schools: [
+    {
+      schoolName: "Newcastle University",
+      logo: require("./assets/images/harvardLogo.png"),
+      subHeader: "Computer Science (Game Engineering)",
+      duration: "September 2023 - Current",
+    }
+  ]
 };
 
 // Podcast Section
@@ -304,7 +312,7 @@ const podcastSection = {
   podcast: [
     "https://anchor.fm/codevcast/embed/episodes/DevStory---Saad-Pasta-from-Karachi--Pakistan-e9givv/a-a15itvo"
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Resume Section
@@ -319,16 +327,15 @@ const resumeSection = {
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
-    "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-0000000000",
-  email_address: "saadpasta70@gmail.com"
+    "Come say hi.. my inbox is always open!",
+  email_address: "talicostudios@gmail.com"
 };
 
 // Twitter Section
 
 const twitterDetails = {
   userName: "twitter", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+  display: false // Set true to display this section, defaults to false
 };
 
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
@@ -344,7 +351,7 @@ export {
   workExperiences,
   openSource,
   bigProjects,
-  achievementSection,
+  gamesSection,
   blogSection,
   talkSection,
   podcastSection,

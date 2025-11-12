@@ -1,29 +1,73 @@
 @import "../../_globalColor";
 
+.talk-card {
+  background: $lightBackground1;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 320px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.dark-mode.talk-card {
+  background: $darkBackground;
+}
+
+.talk-card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.talk-card-content {
+  padding: 16px;
+  text-align: left;
+  width: 100%;
+}
+
+.talk-card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: $titleColor;
+  margin-bottom: 8px;
+}
+
+.talk-card-subtitle {
+  font-size: 1rem;
+  color: $textColor;
+  line-height: 1.5;
+}
+
+.talk-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .talk-header-title {
-  font-size: 56px;
-  font-weight: 400;
-  line-height: 0px;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-.talk-cards-div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1rem 1rem;
+.talk-header-subtitle {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  text-align: center;
 }
 
-.subTitle {
-  color: $subTitle;
-}
-
-@media (max-width: 768px) {
-  .talk-header-title {
-    font-size: 30px;
-    text-align: center;
-  }
-  .talk-header-subtitle {
-    font-size: 16px;
-    line-height: normal;
-    text-align: center;
-  }
+.talks-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }

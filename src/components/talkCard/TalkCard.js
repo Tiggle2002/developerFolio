@@ -1,28 +1,15 @@
 import React from "react";
 import "./TalkCard.scss";
 
-export default function TalkCard({talkDetails}) {
-  return (
-    <div>
-      <div className="container">
-        <div
-          className={
-            talkDetails.isDark ? "dark-rectangle rectangle" : "rectangle"
-          }
-        >
-          <div className="diagonal-fill"></div>
-          <div className="talk-card-title">{talkDetails.title}</div>
-          <p className="talk-card-subtitle">{talkDetails.subtitle}</p>
+export default function TalkCard({ talkDetails }) {
+  const { title, subtitle, image, isDark } = talkDetails;
 
-          <div className="card-footer-button-div">
-            <a href={talkDetails.slides_url} target="_" className="talk-button">
-              Slides
-            </a>
-            <a href={talkDetails.event_url} target="_" className="talk-button">
-              Event
-            </a>
-          </div>
-        </div>
+  return (
+    <div className={isDark ? "talk-card dark-mode" : "talk-card"}>
+      {image && <img src={image} alt={title} className="talk-card-image" />}
+      <div className="talk-card-content">
+        <h3 className="talk-card-title">{title}</h3>
+        <p className="talk-card-subtitle">{subtitle}</p>
       </div>
     </div>
   );

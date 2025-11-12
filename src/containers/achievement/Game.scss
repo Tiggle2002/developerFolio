@@ -1,12 +1,12 @@
 @import "../../_globalColor";
 
-.achievement-heading {
+.game-heading {
   font-size: 56px;
   font-weight: 400;
   line-height: normal;
   margin: 0px;
 }
-.achievement-subtitle {
+.game-subtitle {
   text-transform: uppercase;
   margin: 0px;
   margin-bottom: 50px;
@@ -15,18 +15,25 @@
   color: $subTitle;
 }
 
+.achievement-cards-div {
+  display: flex;
+  flex-wrap: wrap;        // wrap to next line if too many cards
+  justify-content: center; // center cards horizontally
+  gap: 20px;              // space between cards
+}
+
 /* Media Query */
 @media (max-width: 1380px) {
-  .achievement-heading {
+  .game-heading {
     font-size: 40px;
   }
 }
 @media (max-width: 768px) {
-  .achievement-heading {
+  .game-heading {
     font-size: 30px;
     text-align: center;
   }
-  .achievement-subtitle {
+  .game-subtitle {
     font-size: 16px;
     line-height: normal;
     text-align: center;
